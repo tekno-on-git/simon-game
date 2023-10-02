@@ -11,10 +11,10 @@ let keypressed = false;
 function nextSeq() {
     let randomChoosenColor = btnColors[rand()];
     seq.push(randomChoosenColor);
-    $("#" + randomChoosenColor).fadeOut(100).fadeIn(100);
+    $("#" + randomChoosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChoosenColor);
     $("h1").text("Level " + seq.length)
-        //TODO: white flash
+
 }
 
 //key press for first seq
@@ -34,7 +34,7 @@ $(".btn").on("click", function(event) {
     }
     let randColor = event.target.id;
     userSeq.push(randColor);
-    $("#" + randColor).fadeOut(100).fadeIn(100);
+    $("#" + randColor).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randColor);
     //logic to catch wrong :
     // us[us.l - 1] != seq[us.l - 1] -> wrongState()
@@ -64,5 +64,8 @@ function wrongState() {
     playSound("wrong");
     keypressed = false;
     $("h1").text("Game over, Press any key to Restart.")
-        //TODO: red flash
+    $("body").addClass("game-over");
+    setTimeout(() => {
+        $("body").removeClass("game-over");
+    }, 100);
 }
