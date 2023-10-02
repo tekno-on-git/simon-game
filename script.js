@@ -48,6 +48,10 @@ $(".btn").on("click", function(event) {
     //us.l == seq.l -> nextSeq()
     if (userSeq.length == seq.length) {
         userSeq.length = 0;
+        $("body").addClass("level-up");
+        setTimeout(() => {
+            $("body").removeClass("level-up");
+        }, 100);
         setTimeout(nextSeq, 1000);
         return;
     }

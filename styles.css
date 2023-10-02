@@ -30,6 +30,11 @@ body {
   opacity: 0.8;
 }
 
+.level-up {
+  background-color: green;
+  opacity: 0.8;
+}
+
 .red {
   background-color: red;
 }
