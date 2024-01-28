@@ -19,8 +19,8 @@ body {
 .btn {
   margin: 25px;
   display: inline-block;
-  height: 200px;
-  width: 200px;
+  height: 30vh;
+  width: 30vh;
   border: 10px solid black;
   border-radius: 20%;
 }
